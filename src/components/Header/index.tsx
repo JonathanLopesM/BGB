@@ -9,7 +9,7 @@ export function Header(){
         
         <div className={styles.headerContent}>
 
-        <SignInButton/>
+        
           <Link href="/" passHref>
             <h1>BRAZIL GOLDEN BOYS</h1>
           </Link>
@@ -18,6 +18,7 @@ export function Header(){
            <Link href="#">WHO WE ARE</Link>
            <Link href="#">PLAYERS</Link>
            <Link href="#">CONTACT</Link>
+         <SignInButton/>
          </nav>
       </div>
       </header>

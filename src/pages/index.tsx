@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import styles from './home.module.scss';
 
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { SubscribeButton } from '../components/SubscribeButton';
 
 
@@ -22,7 +22,7 @@ export default function Home({product} : HomeProps) {
       <Head>
         <title>Home | BGB</title>
       </Head>
-        <Image src='/players.svg' width={1920} height={495} alt= "home-picture"></Image>
+        <Image src='/players.svg' width={1920} height={385} alt= "home-picture"></Image>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <p>Hey, Welcome to <span> Brazil Golden Boys!</span></p>
@@ -35,7 +35,7 @@ export default function Home({product} : HomeProps) {
             Get access to all publications <br />
             <span>For {product.amount} month</span>
           </p>
-          <SubscribeButton/>
+          <SubscribeButton priceId={product.priceId}/>
           </section>
           <Image src='/playerHome.svg' width={335} height={669} alt= "playerhome"></Image>
       </main>
@@ -43,7 +43,7 @@ export default function Home({product} : HomeProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   //exec on server
   const price = await stripe.prices.retrieve('price_1JV5MiGSlFYV1BqOYgoOR73c', {
     expand: ['product']
@@ -51,14 +51,17 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   const product = {
     priceId: price.id,
-    amount: price.unit_amount,
-
-  }
+    amount: new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(price.unit_amount / 100),
+  };
 
     return {
       props: {
         product
-      }
+      },
+      revalidate: 60 * 60 * 24, //24hours
     }
 
 }
