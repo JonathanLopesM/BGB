@@ -23,7 +23,7 @@ export default NextAuth({
   // },
   callbacks: {
     async signIn( user, account, profile ) {  
-      const  email = user
+      const  email = user.email
       
       try{
         //faunaquery language
@@ -37,7 +37,7 @@ export default NextAuth({
                 )
               )
             ),
-            query.Create(//create metodo para inserção
+            query.Create(//create incertion metod
               query.Collection('users'),
               { data: { email }}
             ),

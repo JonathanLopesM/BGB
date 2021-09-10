@@ -1,3 +1,4 @@
+//STRIPE ON BACK
 import Stripe from 'stripe'
 
 export const stripe = new Stripe(

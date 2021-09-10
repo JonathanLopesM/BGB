@@ -9,7 +9,6 @@ export function SignInButton(){
 
 
   return session ? (
-    console.log(session),
     <button 
       type="button"
       className={styles.signInButton}
