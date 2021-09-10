@@ -6,6 +6,7 @@ import { stripe } from "../../../services/stripe";
 export async function saveSubscription(
   subscriptionId : string,
   customerId: string,
+  createAction = false
 ) {
   //buscar usuario no banco do faunaDB com o ID{customerId}
   const userRef = await fauna.query(
@@ -20,20 +21,37 @@ export async function saveSubscription(
     )
   )
           //buscando todos os dados da subscripion
-  const subscripion = await stripe.subscriptions.retrieve(subscriptionId)
+  const subscription = await stripe.subscriptions.retrieve(subscriptionId)
   
-  const subscripionData = {
-    id: subscripion.id,
+  const subscriptionData = {
+    id: subscription.id,
     userId: userRef,
-    status: subscripion.status,
-    price_id: subscripion.items.data[0].price.id,
+    status: subscription.status,
+    price_id: subscription.items.data[0].price.id,
 
   }
-  //salvar os dados da subscription do usuario no faunaDB
+  if(createAction){
+      //salvar os dados da subscription do usuario no faunaDB
   await fauna.query(
     query.Create(
       query.Collection('subscriptions'),
-      { data: subscripionData }
+      { data: subscriptionData }
     )
   )
+  }else{
+    await fauna.query(
+      query.Replace(//replace substitui toda a subscription
+        query.Select(
+          "ref",
+          query.Get(
+            query.Match(
+              query.Index('subscription_by_id'),
+              subscriptionId,
+            )
+          )
+        ),
+        { data: subscriptionData}
+      ),
+    )
+  }
 }
