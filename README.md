@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<!--arquiv .env -->
+<!-- aws cognito -->
+COGNITO_CLIENT_ID=<!-- mais curto -->
 
-First, run the development server:
+COGNITO_CLIENT_SECRET=<!-- secret no nome--> 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+COGNITO_DOMAIN=
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- #stripe -->
+STRIPE_API_KEY=
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+STRIPE_SUCCESS_URL=http://localhost:3000/posts
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+STRIPE_CANCEL_URL=http://localhost:3000/
 
-## Learn More
+STRIPE_WEBHOOK_SECRET=
+<!-- webhook facil no stripe dev -->
 
-To learn more about Next.js, take a look at the following resources:
+<!-- #prismic -->
+PRISMIC_ENDPOINT= 
+PRISMIC_ACCESS_TOKEN=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#nextauth
+NEXTAUTH_URL=http://localhost:3000/

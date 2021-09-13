@@ -23,7 +23,7 @@ export default function Post({ post }: PostProps){
   return (
     <>
       <Head>
-        <title>{post.title} | BGB</title>
+        <title>{post.title} | BGB </title>
       </Head>
 
       <main className={styles.container}>
@@ -50,14 +50,15 @@ export default function Post({ post }: PostProps){
 
 export const getServerSideProps: GetServerSideProps = async ({req, params}) => {
     const session = await getSession({ req })
-    const slug  = params;
+    const slug  = params?.slug;
 
     // if(!session){}
 
     const prismic = getPrismicClient(req);
 
     const response = await prismic.getByUID('posts', String(slug), {})
-
+    console.log(response)
+    
     const post = {
 
       slug,
