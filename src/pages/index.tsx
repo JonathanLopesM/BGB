@@ -49,6 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
     expand: ['product']
   })
 
+
   const product = {
     priceId: price.id,
     amount: new Intl.NumberFormat('en-US', {

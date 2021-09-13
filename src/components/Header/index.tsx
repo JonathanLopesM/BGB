@@ -15,15 +15,15 @@ export function Header(){
            <ActiveLink activeClassName={styles.active} href="/">
               <a >HOME</a>
            </ActiveLink>
-           <ActiveLink activeClassName={styles.active} href="#">
+           {/* <ActiveLink activeClassName={styles.active} href="#">
               <a>WHO WE ARE</a>
-            </ActiveLink>
+            </ActiveLink> */}
            <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
               <a >PLAYERS</a>
            </ActiveLink>
-           <ActiveLink activeClassName={styles.active} href="#">
+           {/* <ActiveLink activeClassName={styles.active} href="#">
               <a>CONTACT</a>
-           </ActiveLink>
+           </ActiveLink> */}
          <SignInButton/>
          </nav>
       </div>
