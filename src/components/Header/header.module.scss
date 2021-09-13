@@ -19,6 +19,12 @@
     button{
       margin-left:auto;
   }
+  a{
+    &.active{
+      color: var(--white);
+    }
+  }
+    
 }
   h1{
     max-width: 800px;
