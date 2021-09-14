@@ -1,9 +1,7 @@
 
-// import  signIn  from "next-auth/client";
 import { query } from 'faunadb';
 
 import NextAuth from "next-auth";
-import { session } from 'next-auth/client';
 import Provider from "next-auth/providers";
 
 import { fauna } from '../../../services/fauna';
