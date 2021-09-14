@@ -1,4 +1,3 @@
-
 import { signIn, useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
 import { api } from '../../services/api';
