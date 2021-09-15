@@ -4,7 +4,7 @@
     border-radius: 3rem;
     background: var(--silverock);
     border: 0;
-    padding: 0 1.5rem;
+    padding: 0 1.6rem;
 
     display: flex;
     align-items: center;
@@ -15,11 +15,11 @@
 
     svg {
       width: 1.5rem;
-      height: 1.5rem;
+      height: 1.3rem;
     }
 
     svg:first-child {
-      margin-right: 1rem;
+      margin-right: 0.2rem;
     }
     svg.closeIcon {
       margin-left: 1rem;

@@ -10,11 +10,16 @@ import { fauna } from '../../../services/fauna';
 export default NextAuth({
   // Configure one or more authentication providers
   providers: [
-    Provider.Cognito({
-      clientId: process.env.COGNITO_CLIENT_ID,
-      clientSecret: process.env.COGNITO_CLIENT_SECRET,
-      domain: process.env.COGNITO_DOMAIN,
-    }),
+    // Provider.Cognito({
+    //   clientId: process.env.COGNITO_CLIENT_ID,
+    //   clientSecret: process.env.COGNITO_CLIENT_SECRET,
+    //   domain: process.env.COGNITO_DOMAIN,
+    // }),
+    Provider.Google({
+      clientId:process.env.GOOGLE_ID,
+      clientSecret:process.env.GOOGLE_SECRET,
+      authorizationUrl:'https://accounts.google.com/o/oauth2/v2/auth?prompt=consent&access_type=offline&response_type=code',
+    })
     // ...add more providers here
   ],
   jwt: {

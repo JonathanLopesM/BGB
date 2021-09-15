@@ -14,7 +14,7 @@ export function SubscribeButton({ priceId } : SubscribeButtonProps) {
 
   async function handleSubscribe(){
     if(!session){
-      signIn('cognito')
+      signIn('google')
       return;
     }
     if (session.activeSubscription) {

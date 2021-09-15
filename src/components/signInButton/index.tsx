@@ -22,10 +22,9 @@ export function SignInButton(){
     <button 
       type="button"
       className={styles.signInButton}
-      onClick={() => signIn('cognito')}
+      onClick={() => signIn('google')}
       >
-      <FiMail color="#b64343" />
-      Sign in with Gmail
+      <FiMail color="#b64343" />Sign in with Google
     </button>
   )
 }
