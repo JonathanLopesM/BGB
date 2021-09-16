@@ -17,12 +17,12 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
-  // session: {
-  //   jwt: true,
-  // },
-  // jwt: {
-  //   signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
-  // },
+  session: {
+    jwt: true,
+  },
+  jwt: {
+    signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
+  },
   callbacks: {
     async session(session) {
       try {
