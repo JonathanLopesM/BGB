@@ -3,6 +3,7 @@ import { query } from 'faunadb';
 
 import NextAuth from "next-auth";
 import Provider from "next-auth/providers";
+import CognitoProvider from "next-auth/providers"
 
 import { fauna } from '../../../services/fauna';
 
@@ -15,14 +16,20 @@ export default NextAuth({
       clientSecret: process.env.AUTH0_CLIENT_SECRET,
       domain: process.env.AUTH0_DOMAIN,
     }),
+      Provider.Cognito({
+        clientId: process.env.COGNITO_CLIENT_ID,
+        clientSecret: process.env.COGNITO_CLIENT_SECRET,
+        domain: process.env.COGNITO_DOMAIN,
+      })
+    
     // ...add more providers here
   ],
-  session: {
-    jwt: true,
-  },
-  jwt: {
-    signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
-  },
+  // session: {
+  //   jwt: true,
+  // },
+  // jwt: {
+  //   signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
+  // },
   callbacks: {
     async session(session) {
       try {

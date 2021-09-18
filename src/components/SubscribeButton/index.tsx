@@ -14,7 +14,7 @@ export function SubscribeButton({ priceId } : SubscribeButtonProps) {
 
   async function handleSubscribe(){
     if(!session){
-      signIn('auth0')
+      signIn('cognito')
       return;
     }
     if (session.activeSubscription) {
