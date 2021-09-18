@@ -26,12 +26,12 @@ export default function Home({product} : HomeProps) {
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <p>Hey, Welcome to <span> Brazil Golden Boys!</span></p>
-          <h1>Meet the young promises of <span>Brazi</span><span>lian</span> football.</h1>
-          <span>Players in growing development, but with low passing cost.</span>
-          <p>Brazil is a five-time world cup champion federation, being a great storehouse of soccer stars, the country always renews its stars and new promises of world soccer emerge and quickly start to be worth a center of dollar players.</p>
-          <p>Here you can check first hand what is the feeling player that is emerging, their characteristics, their moves and their values.</p>
+          <h1>Meet the young promises of <span>Brazilian</span> football.</h1>
+          <span>Fast-growing players with high probability of profit in the near future.</span>
+          <p>Brazil is the five-time world champion federation, being a great storehouse of football stars, the country always renews its stars and new promises of world football emerge and are quickly worth thousands of dollars.</p>
+          <p>Here you can get to know firsthand the young people that are emerging. See their performance, their in-game characteristics and their contractual values.</p>
           <p>
-            Every week a new athlete with a promising future. <br />
+            EVERY WEEK A NEW ATHLETE WITH A PROMISING FUTURE.<br />
             Get access to all publications <br />
             <span>For {product.amount} month</span>
           </p>
