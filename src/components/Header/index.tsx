@@ -8,17 +8,17 @@ export function Header(){
     
       <header className={styles.headerContainer}>
         <div className={styles.headerContent}>
-          <Link href="/" passHref>
+          <Link href="/" >
             <h1>BRAZIL GOLDEN BOYS</h1>
           </Link>
          <nav>
-           <ActiveLink activeClassName={styles.active} href="/">
+           <ActiveLink activeClassName={styles.active} href="/" passHref>
               <a >HOME</a>
            </ActiveLink>
            {/* <ActiveLink activeClassName={styles.active} href="#">
               <a>WHO WE ARE</a>
             </ActiveLink> */}
-           <ActiveLink activeClassName={styles.active} href="/posts">
+           <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
               <a >PLAYERS</a>
            </ActiveLink>
            {/* <ActiveLink activeClassName={styles.active} href="#">
