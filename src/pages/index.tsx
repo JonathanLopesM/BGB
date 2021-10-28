@@ -21,9 +21,10 @@ export default function Home({product} : HomeProps) {
     <>
       <Head>
         <title>Home | BGB</title>
+        <meta name="description" content="Meet the young promises of Brazilian soccer."></meta>
         
       </Head>
-        <Image src='/players.jpg' width={1920} height={385} alt= "home-picture"></Image>
+        <Image src='/players.jpg' width={1920} height={385} alt= "brazilian players"></Image>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <p>Hey, Welcome to <span> Brazil Golden Boys!</span></p>
