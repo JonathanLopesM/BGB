@@ -10,6 +10,11 @@ import { SubscribeButton } from '../components/SubscribeButton';
 
 import { stripe } from '../services/stripe';
 
+
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
+
 interface HomeProps {
   product: {
     priceId: string;
@@ -17,6 +22,10 @@ interface HomeProps {
   }
 }
 export default function Home({product} : HomeProps) {
+    useEffect(()=>{
+        Aos.init({ duration: 1200})
+    },[])
+
   return (
     <>
       <Head>
@@ -24,8 +33,8 @@ export default function Home({product} : HomeProps) {
         <meta name="description" content="Meet the young promises of Brazilian soccer."></meta>
         
       </Head>
-        <Image src='/players.svg' width={1920} height={385} alt= "brazilian players"></Image>
-      <main className={styles.contentContainer}>
+        <Image data-aos='fade-down' src='/players.jpg' width={1920} height={385} alt= "brazilian players"></Image>
+      <main data-aos='fade-right' className={styles.contentContainer}>
         <section className={styles.hero}>
           <p>Hey, Welcome to <span> Brazil Golden Boys!</span></p>
           <h1>Meet the young promises of <span>Brazilian</span> soccer.</h1>
@@ -39,7 +48,7 @@ export default function Home({product} : HomeProps) {
           </p>
           <SubscribeButton priceId={product.priceId}/>
           </section>
-          <Image src='/playerHome.svg' width={335} height={669} alt= "playerhome"></Image>
+          <Image data-aos='fade-up' src='/playerHome.jpg' width={335} height={669} alt= "playerhome"></Image>
       </main>
     </>
   )
