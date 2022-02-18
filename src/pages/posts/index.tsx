@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
     fetch: ['title', 'content'],
     pageSize: 100,
   })
-  console.log(JSON.stringify(response, null, 2))
+  //console.log(JSON.stringify(response, null, 2))
   //prismic-dom
     const posts = response.results.map( post =>{
       return {

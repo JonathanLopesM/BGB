@@ -24,7 +24,7 @@ export default function Home({product} : HomeProps) {
         <meta name="description" content="Meet the young promises of Brazilian soccer."></meta>
         
       </Head>
-        <Image src='/players.jpg' width={1920} height={385} alt= "brazilian players"></Image>
+        <Image src='/players.svg' width={1920} height={385} alt= "brazilian players"></Image>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <p>Hey, Welcome to <span> Brazil Golden Boys!</span></p>
@@ -39,7 +39,7 @@ export default function Home({product} : HomeProps) {
           </p>
           <SubscribeButton priceId={product.priceId}/>
           </section>
-          <Image src='/playerHome.jpg' width={335} height={669} alt= "playerhome"></Image>
+          <Image src='/playerHome.svg' width={335} height={669} alt= "playerhome"></Image>
       </main>
     </>
   )
