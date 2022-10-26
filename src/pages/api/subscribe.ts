@@ -15,7 +15,7 @@ type User = {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if( req.method === 'POST') {
+  if( req.method === 'POST') { //se o metodo de request for Post
     const session = await getSession({ req })
     
     const user = await fauna.query<User>(
@@ -29,6 +29,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   let customerId = user.data.stripe_customer_id
 
+  //se Nao existe o client id = cliente que nao existe, direciona ele para criar a conta
   if(!customerId){
 
   const stripeCustomer = await stripe.customers.create({
@@ -50,8 +51,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   customerId = stripeCustomer.id
 
 }
-
-      
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: customerId,
       payment_method_types: ['card'],
